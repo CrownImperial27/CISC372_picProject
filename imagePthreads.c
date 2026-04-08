@@ -91,7 +91,7 @@ void convolute_parallel(Image* src, Image* dst, Matrix kernel){
     for(int i = 0; i < NUM_THREADS; i++){
         threadData[i].src = src;
         threadData[i].dst = dst;
-        threadData[i].kernel = kernel;
+        memcpy(threadData[i].kernel, kernel, sizeof(Matrix));
         threadData[i].startRow = i * rowsPerThread;
         threadData[i].endRow = (i == NUM_THREADS - 1)
             ? src->height
