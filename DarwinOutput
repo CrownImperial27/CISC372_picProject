@@ -1,0 +1,14 @@
+Script started on Fri Apr 10 22:16:19 2026
+[arronye@r1n13 CISC372_picProject]$ ./image pic1 edge
+Error loading file pic1.
+[arronye@r1n13 CISC372_picProject]$ ./image pic1.jpg edge
+Took 7 seconds
+[arronye@r1n13 CISC372_picProject]$ ./image_pthreads pic1.jpg edge
+Took 6 seconds
+[arronye@r1n13 CISC372_picProject]$ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+[arronye@r1n13 CISC372_picProject]$ srun image_openmp pic1.jpg edge
+Took 6 seconds
+[arronye@r1n13 CISC372_picProject]$ exit
+exit
+
+Script done on Fri Apr 10 22:20:23 2026
